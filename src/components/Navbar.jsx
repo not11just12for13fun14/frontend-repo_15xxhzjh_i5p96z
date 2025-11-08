@@ -4,8 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
   { label: 'Home', href: '#home' },
-  { label: 'Shop', href: '#shop' },
+  { label: 'Library', href: '#shop' },
+  { label: 'Playground', href: '#editor' },
   { label: 'About', href: '#about' },
+  { label: 'Profile', href: '#profile' },
   { label: 'Admin', href: '#admin' },
 ];
 
@@ -31,7 +33,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 font-semibold tracking-tight">
           <span className="text-indigo-600 dark:text-indigo-400">Jayvik</span>
-          <span className="text-neutral-800 dark:text-neutral-100">Store</span>
+          <span className="text-neutral-800 dark:text-neutral-100">Learn Hub</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -50,7 +52,7 @@ export default function Navbar() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
             <input
               type="text"
-              placeholder="Search products"
+              placeholder="Search courses, books, challenges"
               className="pl-9 pr-3 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-sm outline-none border border-transparent focus:border-indigo-500/40 text-neutral-800 dark:text-neutral-100 placeholder-neutral-400 w-64"
             />
           </div>
@@ -62,12 +64,12 @@ export default function Navbar() {
             <Sun className="h-5 w-5 hidden dark:block text-amber-300" />
             <Moon className="h-5 w-5 dark:hidden text-indigo-600" />
           </button>
-          <button className="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors" aria-label="Cart">
-            <ShoppingCart className="h-5 w-5" />
-          </button>
-          <button className="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors" aria-label="Account">
+          <a href="#profile" className="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors" aria-label="Account">
             <User className="h-5 w-5" />
-          </button>
+          </a>
+          <a href="#cart" className="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors" aria-label="Cart">
+            <ShoppingCart className="h-5 w-5" />
+          </a>
         </div>
 
         <button className="md:hidden p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800" onClick={() => setOpen((o) => !o)} aria-label="Menu">
@@ -88,7 +90,7 @@ export default function Navbar() {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
                   <input
                     type="text"
-                    placeholder="Search products"
+                    placeholder="Search courses, books, challenges"
                     className="w-full pl-9 pr-3 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-sm outline-none border border-transparent focus:border-indigo-500/40 text-neutral-800 dark:text-neutral-100 placeholder-neutral-400"
                   />
                 </div>
@@ -114,18 +116,18 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="flex items-center gap-3">
-                <button className="flex-1 px-4 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-800" aria-label="Cart">
-                  <div className="flex items-center justify-center gap-2">
-                    <ShoppingCart className="h-5 w-5" />
-                    <span>Cart</span>
-                  </div>
-                </button>
-                <button className="flex-1 px-4 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-800" aria-label="Account">
+                <a href="#profile" className="flex-1 px-4 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-800" aria-label="Account">
                   <div className="flex items-center justify-center gap-2">
                     <User className="h-5 w-5" />
                     <span>Account</span>
                   </div>
-                </button>
+                </a>
+                <a href="#cart" className="flex-1 px-4 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-800" aria-label="Cart">
+                  <div className="flex items-center justify-center gap-2">
+                    <ShoppingCart className="h-5 w-5" />
+                    <span>Cart</span>
+                  </div>
+                </a>
               </div>
             </div>
           </motion.div>

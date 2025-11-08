@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Shop from './components/Shop';
 import Editor from './components/Editor';
 import About from './components/About';
+import Profile from './components/Profile';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <Shop />
         <Editor />
         <About />
+        <Profile />
       </main>
       <Footer />
     </div>
