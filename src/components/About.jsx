@@ -1,53 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, Shield, Cpu } from 'lucide-react';
+import { Rocket, Sparkles } from 'lucide-react';
 
 export default function About() {
-  const features = [
-    {
-      icon: Rocket,
-      title: 'Innovation-First',
-      desc: 'We prototype rapidly and ship boldly to push consumer tech forward.',
-    },
-    {
-      icon: Shield,
-      title: 'Secure by Design',
-      desc: 'Privacy, security, and reliability are core to our product DNA.',
-    },
-    {
-      icon: Cpu,
-      title: 'Future-Facing',
-      desc: 'From 3D experiences to AI, we craft premium, scalable systems.',
-    },
-  ];
-
   return (
-    <section id="about" className="relative py-20 bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-950 dark:to-neutral-950/40">
+    <section id="about" className="relative py-24 bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-950 dark:to-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">About Jayvik Labs</h2>
-          <p className="mt-3 text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-            Jayvik Labs is an innovative tech company crafting delightful products at the edge of design and engineering.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {features.map((f, i) => (
-            <motion.div
-              key={f.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/60 backdrop-blur"
-            >
-              <div className="w-12 h-12 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
-                <f.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-4 font-semibold text-neutral-900 dark:text-white">{f.title}</h3>
-              <p className="mt-1.5 text-sm text-neutral-600 dark:text-neutral-300">{f.desc}</p>
-            </motion.div>
-          ))}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-600/10 text-indigo-700 dark:text-indigo-300 text-xs font-medium ring-1 ring-indigo-600/20 mb-4">
+              <Sparkles className="h-3.5 w-3.5" />
+              Powered by Jayvik Labs
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">About Jayvik Labs</h2>
+            <p className="mt-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              Jayvik Labs is an innovation studio focused on empowering students and creators. We build premium learning tools, fintech-inspired interfaces, and immersive experiences that make education delightful and accessible.
+            </p>
+            <p className="mt-3 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              Jayvik Learn Hub blends modern design with performance-first engineering—so you can browse courses, explore books, and code in one elegant place.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a href="#shop" className="px-5 py-3 rounded-xl bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 hover:opacity-90 transition">Explore Library</a>
+              <a href="#editor" className="px-5 py-3 rounded-xl bg-white/60 dark:bg-neutral-900/60 border border-neutral-200/60 dark:border-neutral-800 text-neutral-900 dark:text-white hover:bg-white/80 dark:hover:bg-neutral-900/80 transition">Open Playground</a>
+            </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="rounded-3xl p-8 bg-white/60 dark:bg-neutral-900/60 border border-neutral-200/60 dark:border-neutral-800">
+            <div className="aspect-video rounded-2xl bg-gradient-to-br from-indigo-500/20 via-fuchsia-500/20 to-cyan-500/20 flex items-center justify-center">
+              <Rocket className="h-14 w-14 text-indigo-600 dark:text-indigo-400" />
+            </div>
+            <ul className="mt-6 grid sm:grid-cols-2 gap-4 text-sm text-neutral-700 dark:text-neutral-300">
+              <li className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900">Premium, minimalist design</li>
+              <li className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900">Student-first learning journey</li>
+              <li className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900">Frictionless payments</li>
+              <li className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900">Built-in coding playground</li>
+            </ul>
+          </motion.div>
         </div>
       </div>
     </section>
